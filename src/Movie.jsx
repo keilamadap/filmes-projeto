@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { getPopular } from "./API/api";
 
 const Lista = () => {
@@ -12,19 +13,27 @@ const Lista = () => {
    
     ];
 
-    getPopular()
-    .then((response) => {
-        console.log(response)
-    })
+    const [filmes, setFilmes] = useState('');
+    const imgBaseUrl = 'https://image.tmdb.org/t/p/w500';
+
+    useEffect(() => {
+        getPopular()
+        .then((response) => {
+            setFilmes(response.data.results)
+            console.log(response.data)
+        })
+        .catch(err => console.log(err))
+    }, [])
 
     return (
         <section className="filmes-container">
 
-            {listaFilmes.map((filme)=> {
+            {filmes.map((filme)=> {
                 return (
-                    <div key={filme.nome} className="info-filme">
-                        <p>{filme.nome}</p>
-                        <p className="data-filme">{filme.data}</p>
+                    <div key={filme.title} className="info-filme">
+                        <img src={imgBaseUrl + filme.backdrop_path} />
+                        <p>{filme.title}</p>
+                        <p className="data-filme">{filme.release_date}</p>
                     </div>
                 )
             })}

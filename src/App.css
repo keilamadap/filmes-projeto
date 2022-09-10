@@ -75,6 +75,10 @@
   align-items: center;
   justify-content: center;
   margin-top: 275px;
+  max-width: 100%;
+  overflow-x: hidden;
+  flex-wrap: wrap;
+  height: 100%;
 }
 
 .info-filme{
