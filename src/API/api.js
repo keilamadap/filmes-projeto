@@ -13,3 +13,8 @@ export const getPopular = async (token) =>
     await API.get('/discover/movie?sort_by=popularity.desc&api_key=27356b4d294f73dd67d7feb0d32d50e9', {
         headers: { Authorization: `Bearer ${token}` },
     })
+
+export const getGenres = async (token) => 
+    await API.get('/genre/movie/list?api_key=27356b4d294f73dd67d7feb0d32d50e9', {
+        headers: { Authorization: `Bearer ${token}` },
+    })

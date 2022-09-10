@@ -1,7 +1,7 @@
 const CategoryButton = ({category}) => {
     return ( 
         <button className="category-button">
-            {category}
+            {category.name}
         </button>
      );
 }

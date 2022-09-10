@@ -28,7 +28,7 @@ const Lista = () => {
     return (
         <section className="filmes-container">
 
-            {filmes.map((filme)=> {
+            {filmes ? filmes.map((filme)=> {
                 return (
                     <div key={filme.title} className="info-filme">
                         <img src={imgBaseUrl + filme.backdrop_path} />
@@ -36,7 +36,7 @@ const Lista = () => {
                         <p className="data-filme">{filme.release_date}</p>
                     </div>
                 )
-            })}
+            }) : null}
         </section>
 
     )
