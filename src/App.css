@@ -1,0 +1,93 @@
+.App {
+  text-align: center;
+}
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.navbar {
+  background-color: #5c16c5;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.logo-tmdb {
+  width: 200px;
+  height: auto;
+  margin-left: 90px;
+}
+
+.info-top{
+  background-color: #2d0c5d;
+  position: absolute;
+  width: 100%;
+  height: 250px;
+}
+
+.info-top h1 {
+  font-size: 38px;
+  color: white;
+}
+
+.info-top p {
+  font-size: 12px;
+  color: white;
+}
+
+.category-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-button {
+  min-width: 70px;
+  height: 30px;
+  color: #1d1d1d;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 20px 25px;
+  border: none;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  margin-right: 8px;
+}
+
+.filmes-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 275px;
+}
+
+.info-filme{
+  display: flex;
+  flex-direction: column;
+  color: #1d1d1d;
+  height: 100px;
+  width: 120px;  
+  background-color: #5c16c5;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.data-filme{
+  color: #646464;
+}
