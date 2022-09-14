@@ -7,7 +7,8 @@ const Header = () => {
         <>
             <Navbar />
             <div className="info-top">
-                <h1>Milhões de filmes, séries e pessoas para descobrir. Explore já.</h1>
+                <h1>Milhões de filmes, séries e pessoas
+                    para descobrir. Explore já.</h1>
                 <p>FILTRE POR:</p>
                 <div>
                     <Category />
