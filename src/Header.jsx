@@ -1,12 +1,14 @@
 import Category from "./Category";
 import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     
     return (
         <>
             <Navbar />
-            <div className="info-top">
+            
+                <div className="info-top">
                 <h1>Milhões de filmes, séries e pessoas
                     para descobrir. Explore já.</h1>
                 <p>FILTRE POR:</p>

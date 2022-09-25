@@ -1,17 +1,8 @@
 import { useEffect, useState } from "react";
 import { getPopular } from "./API/api";
 
-const Lista = () => {
-    const listaFilmes = [
-        {nome: 'Oi, Alberto', data: '12 nov 2021'},
-        {nome: 'Clifford', data: '12 nov 2021'},
-        {nome: 'Deadpool', data: '09 fev 2021'},
-        {nome: 'Venom', data: '30 set 2021'},
-        {nome: 'Zero e uns', data: '18 nov 2021'},
-        {nome: 'Duna', data: '15 set 2021'},
-        
-   
-    ];
+const Movie = () => {
+
 
     const [filmes, setFilmes] = useState('');
     const imgBaseUrl = 'https://image.tmdb.org/t/p/w500';
@@ -30,10 +21,10 @@ const Lista = () => {
 
             {filmes ? filmes.map((filme)=> {
                 return (
-                    <div key={filme.title} className="info-filme">
-                        <img src={imgBaseUrl + filme.backdrop_path} />
+                    <div key={filme.title} className="movie-info">
+                        <img src={imgBaseUrl + filme.poster_path} />
                         <p>{filme.title}</p>
-                        <p className="data-filme">{filme.release_date}</p>
+                        <p className="movie-date">{filme.release_date}</p>
                     </div>
                 )
             }) : null}
@@ -43,4 +34,4 @@ const Lista = () => {
 
 }
 
-export default Lista;
+export default Movie;

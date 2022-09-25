@@ -3,9 +3,6 @@ import { getGenres } from "./API/api";
 import CategoryButton from "./CategoryButton";
 
 const Category = () => {
-    const categoryArray = ['Ação', 'Aventura', 'Animação', 'Comédia', 'Crime'];
-
-   
 
     const [categorias, setCategorias] =  useState([]);
 
