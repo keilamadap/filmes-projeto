@@ -30,17 +30,17 @@
   
 }
 
-.navbar li{
+.navbar li {
   list-style: none;
   margin-right: 20px;
 }
 
-.navbar a{
+.navbar a {
   text-decoration: none;
   color: white;
 }
 
-.navbar a:hover{
+.navbar a:hover {
   list-style: none;
   color: #f5a802;
 }
@@ -90,11 +90,10 @@
   margin-top: 8px;
 }
 
-.category-button:checked{
+.category-button:checked {
   cursor: pointer;
   background-color: #f5a802;
 }
-
 
 .filmes-container {
   display: flex;
@@ -144,3 +143,8 @@ img {
     max-width: 300px;
   }
 
+.homepage {
+  width: 100vw;
+  height: 100%;
+  overflow-x: hidden;
+}

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { getPopular, getSingleMovie } from "./API/api";
+import { getPopular, getSingleMovie } from "../API/api";
 
 const Movie = () => {
     const [filmes, setFilmes] = useState('');
@@ -29,7 +29,7 @@ const Movie = () => {
                 return (
                     <div key={filme.title} className="movie-info" onClick={(e) => setMovieId(e.target.value)}>
                         <img src={imgBaseUrl + filme.poster_path} />
-                        <p className="movie-titled">{filme.title}</p>
+                        <p className="movie-title">{filme.title}</p>
                         <p className="movie-date">{filme.release_date}</p>
                     </div>
                 )

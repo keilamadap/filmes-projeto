@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getGenres } from "./API/api";
+import { getGenres } from "../API/api";
 import CategoryButton from "./CategoryButton";
 
 const Category = () => {

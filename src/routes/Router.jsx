@@ -1,13 +1,15 @@
-import Config from "../pages/Config"
-import MainPage from "../pages/MainPage"
 
-const Router = () => {
+import { Route, Router } from "react-router-dom";
+import Homepage from "../pages/Homepage";
+import MovieDetails from "../pages/MovieDetails";
+
+const RouterLocal = () => {
     return (
         <Router>
-            <Routes>
-                <Route path="/config" element={Config} />
-                <Route exact path="/" element={MainPage} />
-            </Routes>
+            <Route path="/details/id" element={MovieDetails} />
+            <Route exact path="/" element={Homepage} />
         </Router>
     )
 }
+
+export default RouterLocal;
