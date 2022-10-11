@@ -25,7 +25,7 @@ export const getGenres = async (token) =>
     });
 
 // função para obter os detalhes de um único filme
-export const getSingleMovie = async (token, movieId) =>
+export const getSingleMovie = async (movieId) =>
     await API.get(`/movie/${movieId}`, {
         headers: { Authorization: `Bearer ${token}` },
     });

@@ -1,14 +1,23 @@
-
-import { Route, Router } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Config from "../pages/Config";
 import Homepage from "../pages/Homepage";
 import MovieDetails from "../pages/MovieDetails";
 
 const RouterLocal = () => {
     return (
-        <Router>
-            <Route path="/details/id" element={MovieDetails} />
-            <Route exact path="/" element={Homepage} />
-        </Router>
+        <BrowserRouter>
+            <Switch>
+                <Route path="/details/:id">
+                    <MovieDetails />
+                </Route>
+                <Route exact path="/">
+                    <Homepage />
+                </Route>
+                <Route exact path="/config">
+                    <Config />
+                </Route>
+            </Switch>
+        </BrowserRouter>
     )
 }
 

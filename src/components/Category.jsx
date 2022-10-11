@@ -9,10 +9,9 @@ const Category = () => {
     useEffect(() => {
         getGenres()
         .then(data => {
-            console.log(data)
             setCategorias(data.data.genres)
         })
-    })
+    }, [])
     
     return (
         <section className="category-list">

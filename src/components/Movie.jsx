@@ -6,7 +6,7 @@ const Movie = () => {
     const [filmes, setFilmes] = useState('');
     const imgBaseUrl = 'https://image.tmdb.org/t/p/w500';
     const [movieId, setMovieId] = useState();
-    const { history } = useHistory();
+    const history = useHistory();
 
     useEffect(() => {
         getPopular()
@@ -19,7 +19,7 @@ const Movie = () => {
 
     const selectMovie = (movie) => {
         getSingleMovie(movie);
-        history.push('/');
+        history.push(`/details/${movie}`);
     }
 
     return (
@@ -27,7 +27,7 @@ const Movie = () => {
 
             {filmes ? filmes.map((filme)=> {
                 return (
-                    <div key={filme.title} className="movie-info" onClick={(e) => setMovieId(e.target.value)}>
+                    <div key={filme.title} className="movie-info" onClick={(e) => selectMovie(filme.id)}>
                         <img src={imgBaseUrl + filme.poster_path} />
                         <p className="movie-title">{filme.title}</p>
                         <p className="movie-date">{filme.release_date}</p>
