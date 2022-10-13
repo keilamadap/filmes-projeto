@@ -4,7 +4,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 150vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,20 +94,22 @@
   cursor: pointer;
 }
 
-.category-button:checked {
+.category-button:hover {
   cursor: pointer;
   background-color: #f5a802;
 }
 
-.filmes-container {
+.filmes-container{
   display: flex;
   margin: auto 30px;
   justify-content: center;
   margin-top: 275px;
+  margin-bottom: 6rem;
   max-width: 100%; 
   overflow-x: hidden;
   flex-wrap: wrap;
   cursor: pointer;
+
 }
 
 .filmes-container p {
@@ -125,6 +127,10 @@
   font-size: 14px;
   font-weight: bold;
   text-overflow: hidden;
+}
+
+.movie-info:hover {
+background-color:#f3eae8;
 }
 
 img {
@@ -159,4 +165,21 @@ img {
 
 .summary {
   display: flex;
+}
+
+.elenco-container{
+  display: flex;
+  margin: 0 auto;
+  align-content: center;
+  width: 96%;
+    height: 350px;
+    overflow-y: scroll;
+
+}
+.recommended-list{
+  display: flex;
+}
+.recommended-list img{
+  width: 50%;
+  height: 20%;
 }
