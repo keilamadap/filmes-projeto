@@ -6,6 +6,7 @@ const Movie = () => {
   const [filmes, setFilmes] = useState("");
   const imgBaseUrl = "https://image.tmdb.org/t/p/w500";
   const [movieId, setMovieId] = useState();
+
   const history = useHistory();
 
   useEffect(() => {

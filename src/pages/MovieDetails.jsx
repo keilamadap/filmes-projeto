@@ -3,13 +3,11 @@ import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import Category from "../components/Category";
-import Elenco from "../components/Elenco";
-import ReactPlayer from "react-player";
+import YouTube from "react-youtube";
 
 const api_key = "4624345e635a614abd2677f6977efc2d";
 const moviesURL = "https://api.themoviedb.org/3/movie/";
 const imgBaseUrl = "https://image.tmdb.org/t/p/w500";
-const traillerBaseURL = "https://www.youtube.com/watch?v=";
 
 const MovieDetails = () => {
   const { id } = useParams();
@@ -38,13 +36,11 @@ const MovieDetails = () => {
     const result = await fetch(url);
     const data = await result.json();
     setVideos(data);
-    console.log(data);
   };
 
   const getRecomendo = async (url) => {
     const result = await fetch(url);
     const data = await result.json();
-
     setRecomendo(data);
   };
 
@@ -62,6 +58,7 @@ const MovieDetails = () => {
     const videoURL = `${moviesURL}${id}/videos?api_key=${api_key}`;
     getVideos(videoURL);
   }, []);
+
   // https://www.youtube.com/watch?v=6JnN1DmbqoU
 
   useEffect(() => {
@@ -82,23 +79,25 @@ const MovieDetails = () => {
       <section className="details-header">
         <Navbar />
         <section className="details-section">
-          <div className="movie-details">
+          <div className="container-details">
             {detalhes && (
               <>
+                <img
+                  src={imgBaseUrl + detalhes.poster_path}
+                  alt={detalhes.name}
+                  className="detalhe-img"
+                />
                 <h2 className="detalhe-title">
-                  Titulo: {detalhes.title} ({detalhes.release_date})
+                  Titulo: {detalhes.title}, ({detalhes.release_date})
                 </h2>
-
                 <p className="genres">
-                  Generos: {listaGeneros(detalhes.genres)} , {detalhes.runtime}{" "}
-                  minutos.
+                  {listaGeneros(detalhes.genres)} , {detalhes.runtime} minutos.
+                  <br />
+                  <br />
+                  <b>Sinopse:</b>
+                  <br />
+                  {detalhes.overview}
                 </p>
-
-                <b>Sinopse:</b>
-                <br />
-                <p className="overview">{detalhes.overview} </p>
-
-                <img src={imgBaseUrl + detalhes.poster_path} />
               </>
             )}
           </div>
@@ -112,7 +111,11 @@ const MovieDetails = () => {
                 return (
                   <ul elenco={ator} key={ator.name}>
                     {" "}
-                    <img src={imgBaseUrl + ator.profile_path} alt={ator.name} />
+                    <img
+                      src={imgBaseUrl + ator.profile_path}
+                      alt={ator.name}
+                      className="img-elenco"
+                    />
                     {ator.name} / {ator.character}
                   </ul>
                 );
@@ -120,9 +123,10 @@ const MovieDetails = () => {
             : null}
         </div>
 
+        {/* TRAILLER  */}
+        <h3>Trailler</h3>
         <section className="movie-videos">
-          <h3>Trailler</h3>
-          <ReactPlayer url="traillerBaseURL"></ReactPlayer>
+          <YouTube></YouTube>
         </section>
 
         <section className="recommended-container">
