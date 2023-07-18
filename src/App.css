@@ -24,15 +24,13 @@
   display: flex;
 }
 
-.navbar ul{
-  margin: 12px ;
+.navbar ul {
+  margin: 12px;
   display: flex;
-  
 }
 
 .navbar li {
   list-style: none;
-
 }
 
 .navbar a {
@@ -56,7 +54,6 @@
   position: absolute;
   width: 100%;
   height: 250px;
-  
 }
 
 .info-top h1 {
@@ -74,6 +71,7 @@
 .category-list {
   justify-content: center;
   margin: auto 150px;
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
 }
@@ -81,6 +79,7 @@
 .category-button {
   min-width: 70px;
   height: 32px;
+  justify-content: center;
   color: #1d1d1d;
   font-weight: bold;
   font-size: 13px;
@@ -99,52 +98,57 @@
   background-color: #f5a802;
 }
 
-.filmes-container{
+.filmes-container {
   display: flex;
   margin: auto 30px;
   justify-content: center;
   margin-top: 275px;
   margin-bottom: 6rem;
-  max-width: 100%; 
   overflow-x: hidden;
+  width: 100%;
   flex-wrap: wrap;
   cursor: pointer;
-
 }
 
 .filmes-container p {
-  justify-content: left;
-  text-align: left;
+  justify-content: center;
+  text-align: center;
   margin: 5px auto;
   max-width: fit-content;
 }
 
+.movie-title {
+  width: 150px;
+}
+
 .movie-info {
   display: flex;
+  align-items: center;
   flex-direction: column;
   color: #1d1d1d;
   padding: 10px 15px;
   font-size: 14px;
+  align-items: center;
   font-weight: bold;
   text-overflow: hidden;
 }
 
 .movie-info:hover {
-background-color:#f3eae8;
+  background-color: #f3eae8;
 }
 
 img {
   height: 250px;
-  width: 160px; 
+  width: 160px;
 }
 
 .movie-date {
   color: #646464;
-  }
+}
 
-  .details-container {
-    max-width: 300px;
-  }
+.details-container {
+  max-width: 300px;
+}
 
 .homepage {
   width: 100%;
@@ -156,20 +160,20 @@ img {
   background-color: #2d0c5d;
   color: white;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
-.container-details{
+.container-details {
   display: flex;
   margin-left: 4rem;
   max-width: 70%;
   margin-top: 2rem;
 }
-.container-details h2{
+.container-details h2 {
   position: absolute;
   margin-top: -2rem;
 }
-.genres{
+.genres {
   margin-top: 3rem;
   margin-left: 2rem;
 }
@@ -180,25 +184,23 @@ img {
   display: inline-block;
 } */
 
- .details-section {
+.details-section {
   display: flex;
 }
-
 
 .summary {
   display: flex;
 }
 
-.elenco-container{
+.elenco-container {
   display: flex;
   margin: 0 auto;
   align-content: center;
   width: 96%;
-    height: 350px;
-    overflow-y: scroll;
-
+  height: 350px;
+  overflow-y: scroll;
 }
-.recommended-list{
+.recommended-list {
   display: flex;
   width: 96%;
   height: 350px;
@@ -206,7 +208,7 @@ img {
   margin-bottom: 5rem;
 }
 
-.pagination-container{
+.pagination-container {
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
@@ -215,8 +217,7 @@ img {
   margin-bottom: 5rem;
   width: 100%;
 }
-.movie-videos{ 
+.movie-videos {
   position: relative;
   display: flex;
-
 }

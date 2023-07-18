@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Header from "../components/Header";
@@ -21,9 +22,11 @@ const MovieDetails = () => {
   const getMovieDetails = async (url) => {
     const result = await fetch(url);
     const data = await result.json();
+
     setDetalhes(data);
   };
-  // resgatando o elenco de cada filme
+
+  const genreNames = detalhes?.genres?.map((genre) => genre.name);
 
   const getElenco = async (url) => {
     const result = await fetch(url);
@@ -91,7 +94,12 @@ const MovieDetails = () => {
                   Titulo: {detalhes.title}, ({detalhes.release_date})
                 </h2>
                 <p className="genres">
-                  {listaGeneros(detalhes.genres)} , {detalhes.runtime} minutos.
+                  {genreNames.map((name, index) => (
+                    <>
+                      <span key={index}> {name} | </span>
+                    </>
+                  ))}
+                  {detalhes.runtime} minutos.
                   <br />
                   <br />
                   <b>Sinopse:</b>
